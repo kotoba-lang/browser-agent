@@ -15,6 +15,11 @@ primitives.
 browser-agent-clj  →  browser-use-clj  →  langgraph-clj  →  langchain-clj
 ```
 
+`agent-browser` はこの repo では外部 CLI 依存ではなく、上記 stack の
+capability role として扱う。CLI が必要な環境では
+`browser-agent-clj` + `browser-use-clj` + `playwright-clj` を包む薄い
+adapter を置く。
+
 ## Correspondence
 
 | genspark | browser-agent-clj | namespace |
@@ -32,7 +37,8 @@ browser-agent-clj  →  browser-use-clj  →  langgraph-clj  →  langchain-clj
 ## Invariants
 
 1. **All `.cljc`, no third-party runtime deps** — runs on JVM / WASM /
-   cljs. (Playwright lives behind the `:playwright` alias / examples.)
+   cljs. (Playwright lives behind the `:playwright` alias / examples; UI
+   rendering is host-adapter owned.)
 2. **I/O injected** — models, browser provider, store, and
    search/fetch/exec/render/emit are host capabilities passed in.
 3. **State is datoms** — one `langchain.db`-compatible conn carries the
@@ -44,5 +50,5 @@ browser-agent-clj  →  browser-use-clj  →  langgraph-clj  →  langchain-clj
 - **Done (this commit)** — P0 supervisor MVP, P1 owned-browser layer
   (mock provider + session datoms + live frames), P2 planner + memory,
   P3 fleet (web/research/coder/author). End-to-end test + offline demo.
-- **Next** — P1 Playwright provider, P4 cljs UI build, P5 MCP bridge +
+- **Next** — P1 Playwright provider, P4 host UI adapter, P5 MCP bridge +
   multi-model routing/cross-check, P6 etzhayyim deployment.

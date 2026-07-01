@@ -33,12 +33,12 @@ src/browseragent/
   fleet.cljc        sub-agents: web / research / coder / author
   memory.cljc       semantic memory + audit queries (facts/artifacts/delegations)
   schema.cljc       the whole runtime as a Datomic schema
-  events.cljc       UI event projection (shared with the cljs front-end)
+  events.cljc       UI event projection for host-owned front-ends
   browser/
     provider.cljc   default owned-browser providers (mock / playwright / in-browser / cdp)
     session.cljc    managed browser: owns the session as :browser/* datoms
     live.cljc       stream the agent's browser to the UI + take-over latch
-ui/                 ClojureScript (reagent + re-frame) front-end
+ui/                 static host-adapter placeholder; no bundled cljs build
 ```
 
 ## Design
@@ -115,7 +115,7 @@ clojure -M:dev:run
 ## Tests
 
 ```sh
-clojure -M:dev:test     # end-to-end run on mocks + Datalog/time-travel assertions
+clojure -M:test     # end-to-end run on mocks + Datalog/time-travel assertions
 ```
 
 ## License

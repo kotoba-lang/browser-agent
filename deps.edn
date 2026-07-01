@@ -1,25 +1,25 @@
 {:paths ["src"]
  ;; genspark 風 super-agent。既存の clj スタックの上の薄いオーケストレーション層 +
  ;; 自前 browser 層。すべて .cljc / 第三者ランタイム依存ゼロ（ADR-2606250956）。
- :deps {io.github.com-junkawasaki/browser-use-clj
-        {:git/tag "v0.1.0" :git/sha "119cd2f"}
-        io.github.com-junkawasaki/langgraph-clj
-        {:git/tag "v0.2.0" :git/sha "133740f"}
-        io.github.com-junkawasaki/langchain-clj
-        {:git/tag "v0.1.0" :git/sha "ae475c9"}}
+ :deps {io.github.kotoba-lang/browser-use
+        {:local/root "../browser-use"}
+        io.github.kotoba-lang/langgraph
+        {:local/root "../langgraph"}
+        io.github.kotoba-lang/langchain
+        {:local/root "../langchain"}}
  :aliases
  {:test {:extra-paths ["test"]
          :extra-deps {io.github.cognitect-labs/test-runner
                       {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
          :main-opts ["-m" "cognitect.test-runner"]
          :exec-fn cognitect.test-runner.api/test}
-  ;; local checkouts for workspace development (orgs/com-junkawasaki/*)
-  :dev {:override-deps {io.github.com-junkawasaki/browser-use-clj
-                        {:local/root "../browser-use-clj"}
-                        io.github.com-junkawasaki/langgraph-clj
-                        {:local/root "../langgraph-clj"}
-                        io.github.com-junkawasaki/langchain-clj
-                        {:local/root "../langchain-clj"}}}
+  ;; local checkouts for workspace development (orgs/kotoba-lang/*)
+  :dev {:override-deps {io.github.kotoba-lang/browser-use
+                        {:local/root "../browser-use"}
+                        io.github.kotoba-lang/langgraph
+                        {:local/root "../langgraph"}
+                        io.github.kotoba-lang/langchain
+                        {:local/root "../langchain"}}}
   ;; offline mock demo: clojure -M:dev:run
   :run {:extra-paths ["examples"]
         :main-opts ["-m" "research-demo"]}

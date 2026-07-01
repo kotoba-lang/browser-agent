@@ -3,7 +3,7 @@
 
   The library performs no I/O: it formats events and hands them to an
   injected `:emit-fn` host capability (an SSE/WebSocket push on the
-  JVM, a `core.async` tap, a re-frame dispatch in the cljs UI). With
+  JVM, a `core.async` tap, or a host UI event callback). With
   no `:emit-fn` this is a silent no-op, so headless runs stay pure.
 
   A real provider pairs this with a screencast: pass a `:screenshot-fn`
