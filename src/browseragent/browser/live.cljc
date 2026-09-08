@@ -10,7 +10,7 @@
   that returns the current frame (CDP `Page.screencast`, a periodic
   capture, or an Anthropic image block) and it rides the same stream
   the user watches — and can interrupt (take-over)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn event
   "Normalize a browser-side event for the UI stream."

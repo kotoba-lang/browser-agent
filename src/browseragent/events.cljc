@@ -3,7 +3,7 @@
   front-end and the server format the run the same way. Turns a
   finished run (plan + delegations + results) into a flat, renderable
   event stream for the plan tree / delegation feed."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn plan-events [plan]
   (for [{:keys [step goal assignee]} plan]

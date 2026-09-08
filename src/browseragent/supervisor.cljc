@@ -18,7 +18,7 @@
   (:require [browseragent.fleet :as fleet]
             [browseragent.memory :as mem]
             [browseragent.planner :as planner]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [langgraph.graph :as g]
             [langchain.message :as msg]
             [langchain.model :as model]))
