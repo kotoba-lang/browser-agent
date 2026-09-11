@@ -94,7 +94,7 @@ Run the bundled mock demo (prints the event stream + the Datomic audit
 trail):
 
 ```sh
-clojure -M:dev:run
+kbb -M:dev:run
 ```
 
 ## Going live
@@ -115,7 +115,7 @@ clojure -M:dev:run
 ## Tests
 
 ```sh
-clojure -M:test     # end-to-end run on mocks + Datalog/time-travel assertions
+kbb -M:test     # end-to-end run on mocks + Datalog/time-travel assertions
 ```
 
 ## License
