@@ -34,7 +34,7 @@
   ;; offline mock demo: clojure -M:dev:run
   :run {:extra-paths ["examples"]
         :main-opts ["-m" "research-demo"]}
-  ;; Real owned browser via Playwright — see src/browseragent/browser/provider.cljc
+  ;; Real owned browser via Playwright — see src/browseragent/browser/provider.cljk
   :playwright {:extra-paths ["examples"]
                :extra-deps {com.microsoft.playwright/playwright {:mvn/version "1.44.0"}}}
   ;; clj-kondo as a Clojars lib (no Homebrew/system install needed).
