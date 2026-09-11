@@ -4,7 +4,7 @@
   through the MoA supervisor (the web step drives the agent's owned
   browser), and prints the UI event stream + the Datomic audit trail.
 
-      clojure -M:dev:run            ; (alias wires examples/ + this -main)
+      kbb -M:dev:run            ; (alias wires examples/ + this -main)
 
   Swap the mock models for `langchain.model/anthropic-model` and the
   `:mock` browser for a Playwright provider to run it for real."
