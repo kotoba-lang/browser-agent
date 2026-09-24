@@ -4,7 +4,7 @@
   sub-agent (the web step driving the agent's *owned* browser); and the
   whole run — plan, delegations, the browser session, facts and the
   generated artifact — is asserted straight out of the Datomic store."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [browseragent.run :as run]
             [browseragent.memory :as mem]
             [browseragent.browser.session :as session]

@@ -3,3 +3,4 @@ target/
 ui/public/js/
 ui/.shadow-cljs/
 node_modules/
+.nbb/
