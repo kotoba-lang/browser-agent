@@ -8,7 +8,7 @@
   deterministic / programmatic planning, or a `:model` and the planner
   asks it for an EDN plan. A step is
   `{:step n :goal \"…\" :assignee :web|:research|:coder|:author}`."
-  (:require [clojure.edn :as edn]
+  (:require [kotoba.lang.edn :as edn]
             [langchain.message :as msg]
             [langchain.model :as model]))
 
